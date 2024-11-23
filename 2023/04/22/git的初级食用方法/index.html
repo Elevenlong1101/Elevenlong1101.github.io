@@ -1,227 +1,233 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>git的初级食用方法~ | 雪山小屋</title><meta name="author" content="Elevenlong"><meta name="copyright" content="Elevenlong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="简单介绍git的使用方法">
-<meta property="og:type" content="article">
-<meta property="og:title" content="git的初级食用方法~">
-<meta property="og:url" content="http://blog.elevenlong.top/2023/04/22/git%E7%9A%84%E5%88%9D%E7%BA%A7%E9%A3%9F%E7%94%A8%E6%96%B9%E6%B3%95/index.html">
-<meta property="og:site_name" content="雪山小屋">
-<meta property="og:description" content="简单介绍git的使用方法">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://blog.elevenlong.top/img/019.png">
-<meta property="article:published_time" content="2023-04-22T06:39:39.000Z">
-<meta property="article:modified_time" content="2023-10-25T03:30:11.824Z">
-<meta property="article:author" content="Elevenlong">
-<meta property="article:tag" content="git">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://blog.elevenlong.top/img/019.png"><link rel="shortcut icon" href="https://pic4.zhimg.com/v2-48409ab9240be68f5c00d34e1e193bd5_r.jpg"><link rel="canonical" href="http://blog.elevenlong.top/2023/04/22/git%E7%9A%84%E5%88%9D%E7%BA%A7%E9%A3%9F%E7%94%A8%E6%96%B9%E6%B3%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '天',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: {"limitCount":50,"languages":{"author":"作者: Elevenlong","link":"链接: ","source":"来源: 雪山小屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: true,
-  }
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'git的初级食用方法~',
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2023-10-25 11:30:11'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
   
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
   
-    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
-      const link = document.createElement('link')
-      link.rel = 'stylesheet'
-      link.href = url
-      if (id) link.id = id
-      link.onerror = reject
-      link.onload = link.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        link.onload = link.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(link)
-    })
+  <title>git的初级食用方法~ | 雪山小屋</title>
+  <link rel="stylesheet" href="/css/fonts/Chinese-normal-normal.min.css">
+  <link rel="stylesheet" href="/css/fonts/ChineseMono-normal-normal.min.css">
+  <link rel="stylesheet" href="/css/fonts/Chinese-italic-normal.min.css">
+  <link rel="stylesheet" href="/css/fonts/Chinese-normal-bold.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
+  <meta name="description" itemprop="description" content="简单介绍git的使用方法">
+  
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css">
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div id="nav-outer">
+  <nav id="main-nav" class="outer">
+    <a id="main-nav-toggle" class="nav-icon"></a>
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+    <div class="main-nav-space-between"></div>
+    
+  </nav>
+</div>
+<div id="header-title">
+  <h1 id="logo-wrap">
+    <a href="/" id="logo">雪山小屋</a>
+  </h1>
+  
+    <h2 id="subtitle-wrap">
+      <a href="/" id="subtitle">snowlodge</a>
+    </h2>
+  
+</div>
+
+      <div id="content" class="outer">
+        <section id="main"><article id="post-git的初级食用方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/04/22/git%E7%9A%84%E5%88%9D%E7%BA%A7%E9%A3%9F%E7%94%A8%E6%96%B9%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2023-04-22T06:39:39.000Z" itemprop="datePublished">2023-04-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
         
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      git的初级食用方法~
+    </h1>
+  
+
+      </header>
     
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
-  endLoading: () => {
-    document.body.style.overflow = '';
-    document.getElementById('loading-box').classList.add("loaded")
-  },
-  initLoading: () => {
-    document.body.style.overflow = 'hidden';
-    document.getElementById('loading-box').classList.remove("loaded")
-  }
-}
-
-preloader.initLoading()
-window.addEventListener('load',()=> { preloader.endLoading() })
-
-if (false) {
-  document.addEventListener('pjax:send', () => { preloader.initLoading() })
-  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
-}</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic4.zhimg.com/v2-48409ab9240be68f5c00d34e1e193bd5_r.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa-solid fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-rocket"></i><span> 传送门</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 有趣小站</span></a></li><li><a class="site-page child" href="/site/"><i class="fa-fw fa-solid fa-meteor"></i><span> 友情链接</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/019.png')"><nav id="nav"><span id="blog-info"><a href="/" title="雪山小屋"><span class="site-name">雪山小屋</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa-solid fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-rocket"></i><span> 传送门</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 有趣小站</span></a></li><li><a class="site-page child" href="/site/"><i class="fa-fw fa-solid fa-meteor"></i><span> 友情链接</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">git的初级食用方法~</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-22T06:39:39.000Z" title="发表于 2023-04-22 14:39:39">2023-04-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-25T03:30:11.824Z" title="更新于 2023-10-25 11:30:11">2023-10-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="git的初级食用方法~"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>git是一款简单小巧的代码版本管理工具，举个例子，当你在进行项目开发的时候，准备加入一个新的功能，但是因为太菜了，写出的代码疯狂报错，又找不到错误的原因，此时你会想，如果我能像打游戏一样从上个存档点重新开始那多好啊，于是，git就这样出现了。</p>
-<p>git可以保存你每个版本的代码，相当于对你的开发进度进行一个存档，等到下次卡关的时候，git可以十分方便的将你的项目回滚到你上次存档的状态，而且你的每次存档都会进行记录，这样就不怕代码写废而重新开始了</p>
-<h1 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h1><p><a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a><br><a target="_blank" rel="noopener" href="https://git-lfs.com/">https://git-lfs.com</a></p>
-<h1 id="基础使用流程"><a href="#基础使用流程" class="headerlink" title="基础使用流程"></a>基础使用流程</h1><p>打开想要存放开发文件的文件夹，右键，<strong>git bush here</strong> ，打开终端</p>
-<h2 id="配置用户名和邮箱"><a href="#配置用户名和邮箱" class="headerlink" title="配置用户名和邮箱"></a>配置用户名和邮箱</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name 用户名</span><br><span class="line">git config --global user.email 邮箱</span><br></pre></td></tr></table></figure>
-
-<h2 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h2><p>这个仓库的意思就相当于你在游戏中存放存档的地方</p>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="介绍">介绍</h1>
+<p>git是一款简单小巧的代码版本管理工具<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>举个例子<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>当你在进行项目开发的时候<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>准备加入一个新的功能<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>但是因为太菜了<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>写出的代码疯狂报错<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>又找不到错误的原因<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>此时你会想<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>如果我能像打游戏一样从上个存档点重新开始那多好啊<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>于是<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>git就这样出现了<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>git可以保存你每个版本的代码<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>相当于对你的开发进度进行一个存档<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>等到下次卡关的时候<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>git可以十分方便的将你的项目回滚到你上次存档的状态<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>而且你的每次存档都会进行记录<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>这样就不怕代码写废而重新开始了</p>
+<h1 id="下载地址">下载地址</h1>
+<p><a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a><br>
+<a target="_blank" rel="noopener" href="https://git-lfs.com">https://git-lfs.com</a></p>
+<h1 id="基础使用流程">基础使用流程</h1>
+<p>打开想要存放开发文件的文件夹<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>右键<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span><strong>git bush here</strong> <span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>打开终端</p>
+<h2 id="配置用户名和邮箱">配置用户名和邮箱</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name 用户名</span><br><span class="line">git config --global user.email 邮箱</span><br></pre></td></tr></table></figure>
+<h2 id="新建仓库">新建仓库</h2>
+<p>这个仓库的意思就相当于你在游戏中存放存档的地方</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-
-<p>之后你会发现文件夹中多出来一个 <strong>.git</strong> 文件夹，这就是你新建的新仓库</p>
-<h2 id="备份代码"><a href="#备份代码" class="headerlink" title="备份代码"></a>备份代码</h2><p>准备提交命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">#将“.”替换成文件名可以将特定文件存入暂存区并在后续命令中提交</span><br></pre></td></tr></table></figure>
-
-<p>这个命令的意思是将所有代码放入暂存区，相当于子弹上膛，准备发射</p>
+<p>之后你会发现文件夹中多出来一个 <strong>.git</strong> 文件夹<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>这就是你新建的新仓库</p>
+<h2 id="备份代码">备份代码</h2>
+<p>准备提交命令<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">#将<span class="bd-box"><h-char class="bd bd-end"><h-inner>“</h-inner></h-char></span>.<span class="bd-box"><h-char class="bd bd-beg"><h-inner>”</h-inner></h-char></span>替换成文件名可以将特定文件存入暂存区并在后续命令中提交</span><br></pre></td></tr></table></figure>
+<p>这个命令的意思是将所有代码放入暂存区<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>相当于子弹上膛<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>准备发射</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;备注&quot;</span><br></pre></td></tr></table></figure>
-
-<p>这个命令就是提交全部文件<br>相当于按下开火键，扣下扳机<br>在命令末尾的引号中需要添加备注，表明你本次提交的内容，<strong>这个备注是写给未来的自己看的，所以一定要写清楚</strong></p>
-<h2 id="回滚存档"><a href="#回滚存档" class="headerlink" title="回滚存档"></a>回滚存档</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout HEAD 文件名</span><br></pre></td></tr></table></figure>
-
-<p>这个命令的意思就是读档<br>将上一次备份的文件进行回复</p>
-<h2 id="查看提交记录"><a href="#查看提交记录" class="headerlink" title="查看提交记录"></a>查看提交记录</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
-
-<p>这个没什么好说的，查看你每一次的提交记录</p>
-<h1 id="关于大文件"><a href="#关于大文件" class="headerlink" title="关于大文件"></a>关于大文件</h1><p>github上大于100m的大文件都需要使用git lfs来上传，下面来介绍使用gitlfs进行上传的流程</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git init #创建本地仓库环境 </span><br><span class="line">git lfs install #安装大文件上传应用 </span><br><span class="line">git lfs track * #追踪要上传的大文件，*表示路径下的所有文件 </span><br><span class="line">git add .gitattributes #添加先上传的属性文件(要先上传属性文件，不然有可能失败) </span><br><span class="line">git commit -m &quot;pre&quot; #添加属性文件上传的说明 </span><br><span class="line">git remote add origin https://github.com/xx/xxx.git#建立本地和Github仓库的链接 </span><br><span class="line">git push origin master #上传属性文件 git add * #添加要上传的大文件，*表示路径下的所有文件 </span><br><span class="line">git commit -m &quot;Git LFS commit&quot; #添加大文件上传的说明 </span><br><span class="line">git push origin master #上传大文件</span><br></pre></td></tr></table></figure>
-
+<p>这个命令就是提交全部文件<br>
+相当于按下开火键<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>扣下扳机<br>
+在命令末尾的引号中需要添加备注<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>表明你本次提交的内容<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span><strong>这个备注是写给未来的自己看的<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>所以一定要写清楚</strong></p>
+<h2 id="回滚存档">回滚存档</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout HEAD 文件名</span><br></pre></td></tr></table></figure>
+<p>这个命令的意思就是读档<br>
+将上一次备份的文件进行回复</p>
+<h2 id="查看提交记录">查看提交记录</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
+<p>这个没什么好说的<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>查看你每一次的提交记录</p>
+<h1 id="关于大文件">关于大文件</h1>
+<p>github上大于100m的大文件都需要使用git lfs来上传<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>下面来介绍使用gitlfs进行上传的流程</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git init #创建本地仓库环境 </span><br><span class="line">git lfs install #安装大文件上传应用 </span><br><span class="line">git lfs track * #追踪要上传的大文件<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>*表示路径下的所有文件 </span><br><span class="line">git add .gitattributes #添加先上传的属性文件(要先上传属性文件<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>不然有可能失败) </span><br><span class="line">git commit -m &quot;pre&quot; #添加属性文件上传的说明 </span><br><span class="line">git remote add origin https://github.com/xx/xxx.git#建立本地和Github仓库的链接 </span><br><span class="line">git push origin master #上传属性文件 git add * #添加要上传的大文件<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>*表示路径下的所有文件 </span><br><span class="line">git commit -m &quot;Git LFS commit&quot; #添加大文件上传的说明 </span><br><span class="line">git push origin master #上传大文件</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>值得注意的是gitlfs安装目录需要是你安装git目录的bin文件夹</p>
 </blockquote>
 <p>例如</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Git\bin</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="git-与-github"><a href="#git-与-github" class="headerlink" title="git 与 github"></a>git 与 github</h1><p>值得注意的是，以上所有的操作都是在本地完成的，根本不需要联网  </p>
-<p>而github，我们看看名字就会发现，这玩意与git肯定有着千丝万缕的联系  </p>
-<p>实际上，github就是一个代码托管平台，来自世界各地的人都可以将自己的代码远程上传到github，让平台帮你托管，例如本博客就是部署在github上的，而这一切都可以依靠git</p>
-<p>在github上创建一个仓库后往下看（本文章不涉及git与github进行ssh关联的内容）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin 项目地址（网址）</span><br></pre></td></tr></table></figure>
-
+<h1 id="git-与 github">git 与 github</h1>
+<p>值得注意的是<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>以上所有的操作都是在本地完成的<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>根本不需要联网</p>
+<p>而github<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>我们看看名字就会发现<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>这玩意与git肯定有着千丝万缕的联系</p>
+<p>实际上<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>github就是一个代码托管平台<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>来自世界各地的人都可以将自己的代码远程上传到github<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>让平台帮你托管<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>例如本博客就是部署在github上的<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>而这一切都可以依靠git</p>
+<p>在github上创建一个仓库后往下看<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>本文章不涉及git与github进行ssh关联的内容<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin 项目地址<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>网址<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span></span><br></pre></td></tr></table></figure>
 <p>这个命令就是将本地的代码仓库同github上的仓库进行关联</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin 分支（默认为main）</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin 分支<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>默认为main<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span></span><br></pre></td></tr></table></figure>
 <p>这条命令可以将你本地的代码推送到github的仓库中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 项目地址（http/ssh链接）</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 项目地址<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>http/ssh链接<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span></span><br></pre></td></tr></table></figure>
 <p>这个命令可以将github上的项目克隆到本地</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://blog.elevenlong.top">Elevenlong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://blog.elevenlong.top/2023/04/22/git%E7%9A%84%E5%88%9D%E7%BA%A7%E9%A3%9F%E7%94%A8%E6%96%B9%E6%B3%95/">http://blog.elevenlong.top/2023/04/22/git%E7%9A%84%E5%88%9D%E7%BA%A7%E9%A3%9F%E7%94%A8%E6%96%B9%E6%B3%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://blog.elevenlong.top" target="_blank">雪山小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/git/">git</a></div><div class="post_share"><div class="social-share" data-image="/img/019.png" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/04/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/" title="Python学习笔记--数据容器"><img class="cover" src="/img/019.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Python学习笔记--数据容器</div></div></a></div><div class="next-post pull-right"><a href="/2023/10/27/selenium%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E5%88%B7%E8%AF%BE/" title="selenium简单实现刷课"><img class="cover" src="/img/019.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">selenium简单实现刷课</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/10/27/hexo%20github%E6%8A%A5%E9%94%99spawn%20failed%20%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" title="hexo github报错spawn failed 解决办法"><img class="cover" src="/img/019.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-27</div><div class="title">hexo github报错spawn failed 解决办法</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="toc-number">2.</span> <span class="toc-text">下载地址</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">基础使用流程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1"><span class="toc-number">3.1.</span> <span class="toc-text">配置用户名和邮箱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">3.2.</span> <span class="toc-text">新建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%87%E4%BB%BD%E4%BB%A3%E7%A0%81"><span class="toc-number">3.3.</span> <span class="toc-text">备份代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E6%BB%9A%E5%AD%98%E6%A1%A3"><span class="toc-number">3.4.</span> <span class="toc-text">回滚存档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95"><span class="toc-number">3.5.</span> <span class="toc-text">查看提交记录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%A4%A7%E6%96%87%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">关于大文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-%E4%B8%8E-github"><span class="toc-number">5.</span> <span class="toc-text">git 与 github</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('/img/019.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Elevenlong</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Wish you soft and gental ~</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/10/27/selenium%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E5%88%B7%E8%AF%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          selenium简单实现刷课
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/04/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          Python学习笔记--数据容器
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Elevenlong<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a><br>
+      
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/jquery-1.4.3.min.js"></script>
+
+<script src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+<script>
+  MathJax = {
+    options: {
+      enableMenu: false
+    },
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    }
+  };
+</script>
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+    CommonHTML: {
+      linebreaks: false
+    }
+  });
+  </script> -->
+<script type="text/javascript" id="MathJax-script" async
+  src="/mathjax/tex-chtml.js">
+</script>
+<!-- <script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML">
+</script> -->
+
+  </div>
+</body>
+</html>
