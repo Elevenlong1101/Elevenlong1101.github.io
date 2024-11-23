@@ -7,8 +7,8 @@ http://blog.elevenlong.top/2023/04/21/markdown%E8%AF%AD%E6%B3%95%E7%9A%84%E5%B8%
 http://blog.elevenlong.top/2023/04/22/git%E7%9A%84%E5%88%9D%E7%BA%A7%E9%A3%9F%E7%94%A8%E6%96%B9%E6%B3%95/
 http://blog.elevenlong.top/2023/04/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/
 http://blog.elevenlong.top/
-http://blog.elevenlong.top/tags/python/
 http://blog.elevenlong.top/tags/git/
+http://blog.elevenlong.top/tags/python/
 http://blog.elevenlong.top/tags/markdown/
 http://blog.elevenlong.top/tags/selenium/
 http://blog.elevenlong.top/tags/picgo/
