@@ -1,3 +1,4 @@
+http://blog.elevenlong.top/2024/12/07/%E5%90%8E%E5%8A%B2/
 http://blog.elevenlong.top/about/index.html
 http://blog.elevenlong.top/2023/10/28/%E4%BD%BF%E7%94%A8picgo%20github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/
 http://blog.elevenlong.top/2023/10/27/hexo%20github%E6%8A%A5%E9%94%99spawn%20failed%20%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/
@@ -13,6 +14,8 @@ http://blog.elevenlong.top/tags/markdown/
 http://blog.elevenlong.top/tags/selenium/
 http://blog.elevenlong.top/tags/picgo/
 http://blog.elevenlong.top/tags/%E5%9B%BE%E5%BA%8A/
+http://blog.elevenlong.top/tags/%E8%A7%82%E5%90%8E%E6%84%9F/
 http://blog.elevenlong.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/
 http://blog.elevenlong.top/categories/%E6%8A%98%E8%85%BE%E6%8A%A5%E9%94%99/
 http://blog.elevenlong.top/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/
+http://blog.elevenlong.top/categories/%E9%9A%8F%E7%AC%94/
